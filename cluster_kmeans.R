@@ -1,0 +1,1 @@
+kmeans(iris[,3:4], center=3)

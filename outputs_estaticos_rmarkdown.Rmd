@@ -1,0 +1,22 @@
+---
+title: "Projeto {rmarkdown}"
+author: "Paula Maçaira"
+date: "01/02/2021"
+output: html_document
+bibliography: bibliografia.bib
+---
+
+# Cabeçalho de seção
+
+## Cabeçalho de subseção
+
+### Cabeçalho de subsubseção
+
+- *itálico*
+- **negrito**
+- `codigo`
+- [link](https://rstudio.com/conference/)
+- equações Latex $E = mc^2$
+- bibliografia [@Vargas2019850]
+- ![imagem](Logo.png){width=100px}
+- e muito mais

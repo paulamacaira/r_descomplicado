@@ -26,3 +26,11 @@ starwars %>%
 # Obtenha como resultado um conjunto de dados, em ordem decrescente,
 # que contenha os valores máximos por cor de olho (eye_color) dos
 # moradores do mundo (homeworld) Tatooine.
+
+# SOLUÇÃO
+
+starwars %>% 
+  filter(homeworld == "Tatooine") %>% 
+  group_by(eye_color) %>% 
+  summarise(maximo=max(height)) %>% 
+  arrange(-maximo)

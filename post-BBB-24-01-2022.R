@@ -27,13 +27,14 @@ n %v% "num_votos" = colSums(matriz_auxiliar)
 n %v% "phono" = ifelse(network.vertex.names(n) %in% pipoca, "Pipoca", "Camarote")
 
 ggplot(n, aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_nodes(aes(color = phono, size = num_votos), alpha = 0.4) +
+  geom_nodes(aes(color = phono, size = num_votos), alpha = 0.3) +
   geom_edges(color = "grey50", alpha = 0.6,
-             arrow = arrow(length = unit(3, "pt"), type = "closed")) +
+             arrow = arrow(length = unit(6, "pt"), type = "closed")) +
   geom_nodetext_repel(aes(color = phono, label = vertex.names),
-                      fontface = "bold", hjust = "left", show.legend = FALSE) +
+                      fontface = "bold", show.legend = FALSE) +
   scale_size_continuous(name = "Votos recebidos", range = c(0, 10), breaks = 0:7, labels = 0:7) +
   scale_color_manual(name = "Origem", values = c("Camarote" = "tomato", "Pipoca" = "steelblue"),
                      aesthetics = c("colour", "fill")) +
   theme_blank()
 
+ggsave(filename = "rplot.png", units = "px", width = 1080*2+1000, height = 1080*2, dpi = 300, limitsize = FALSE)
